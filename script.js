@@ -17,12 +17,6 @@ const btnHold = document.querySelector('.btn--hold');
 
 // Starting Conditions
 
-window.addEventListener('beforeunload', event => {
-  // Cancel the event as stated by the standard.
-  event.preventDefault();
-  // Chrome requires returnValue to be set.
-  event.returnValue = '';
-});
 
 let scores, currentScore, activePlayer, playing;
 
