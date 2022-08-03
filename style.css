@@ -257,8 +257,8 @@ main {
 }
 .emoji:nth-of-type(2) {
   left: 20%;
-  -webkit-animation-delay: 6s, 0.5s;
-  animation-delay: 6s, 0.5s;
+  -webkit-animation-delay: 2s, 0.5s;
+  animation-delay: 2s, 0.5s;
 }
 .emoji:nth-of-type(3) {
   left: 30%;
@@ -272,13 +272,13 @@ main {
 }
 .emoji:nth-of-type(5) {
   left: 50%;
-  -webkit-animation-delay: 8s, 3s;
-  animation-delay: 8s, 3s;
+  -webkit-animation-delay: 2s, 3s;
+  animation-delay: 2s, 3s;
 }
 .emoji:nth-of-type(6) {
   left: 60%;
-  -webkit-animation-delay: 6s, 2s;
-  animation-delay: 6s, 2s;
+  -webkit-animation-delay: 5s, 2s;
+  animation-delay: 5s, 2s;
 }
 .emoji:nth-of-type(7) {
   left: 70%;
