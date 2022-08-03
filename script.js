@@ -9,6 +9,8 @@ const score1El = document.getElementById('score--1');
 const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 
+const animation = document.querySelector('.emojis');
+
 
 const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
@@ -16,7 +18,6 @@ const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
 // Starting Conditions
-
 
 let scores, currentScore, activePlayer, playing;
 
@@ -32,13 +33,14 @@ const init = function() {
      current0El.textContent = 0;
      current1El.textContent = 0;
      
-    
+
     diceEl.classList.add('hidden');
+    animation.classList.add('hidden');
     player0El.classList.remove('player--winner');
     player1El.classList.remove('player--winner');
     player0El.classList.add('player--active');
     player1El.classList.remove('player--active');
-    
+
 };
 
 init();
@@ -51,6 +53,7 @@ const switchPlayer = function() {
     player0El.classList.toggle('player--active');
     player1El.classList.toggle('player--active');
 };
+
 
 
 // Rolling dice logic functionality 
@@ -93,12 +96,13 @@ btnHold.addEventListener('click', function() {
 
 
     // Check for player score is 100 
-    if (scores[activePlayer] >= 100){
+    if (scores[activePlayer] >= 20){
         // Display the winner
         playing = false;
          diceEl.classList.add('hidden');
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
           document.querySelector(`.player--${activePlayer}`).classList.remove('player--activate');
+          animation.classList.remove('hidden');
           // End the Game 
     } else {
         // Switch to the next player
