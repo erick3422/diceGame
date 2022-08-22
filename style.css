@@ -303,7 +303,7 @@ main {
 
     main{ 
   position: absolute;
-  width: 1400px;
+  width: 1900px;
   height: 800px;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
