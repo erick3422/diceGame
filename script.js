@@ -58,7 +58,7 @@ const switchPlayer = function() {
 
 // Rolling dice logic functionality 
 
-btnRoll.addEventListener('click', function() {
+btnRoll.addEventListener('click', 'ontouchstart', function() {
 
 
 
@@ -85,7 +85,7 @@ btnRoll.addEventListener('click', function() {
 }
 });
 
-btnHold.addEventListener('click', function() {
+btnHold.addEventListener('click', 'ontouchstart', function() {
 
 
     if(playing){
@@ -113,4 +113,4 @@ btnHold.addEventListener('click', function() {
 });
 
 // Reset the Game
-btnNew.addEventListener('click', init);
+btnNew.addEventListener('click', 'ontouchstart', init);
