@@ -155,7 +155,7 @@ btnRoll.addEventListener('touchend', function(e) {
 btnHold.addEventListener('touchend',  function(e) {
 
     e.preventDefault();
-    
+
     if(playing){
    
     // Add current score to activate player
@@ -180,5 +180,3 @@ btnHold.addEventListener('touchend',  function(e) {
     }
 });
 
-// Reset the Game
-btnNew.addEventListener('touchend', init);
