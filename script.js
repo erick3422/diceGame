@@ -22,6 +22,7 @@ const btnHold = document.querySelector('.btn--hold');
 let scores, currentScore, activePlayer, playing;
 
 const init = function() {
+
     scores = [0, 0];
     
      currentScore = 0;
@@ -56,6 +57,83 @@ const switchPlayer = function() {
 
 
 
+
+// --------- Event Listener For Touch Device ----------------- //
+
+
+// Rolling dice logic functionality 
+
+btnRoll.addEventListener('touchend', function(e) {
+
+    e.preventDefault();
+    e.target.click();
+
+    if (playing){
+
+    // Generate random dice number
+
+    const dice = Math.trunc ( Math.random() * 6 ) + 1 ;
+    // Display dice number 
+    diceEl.classList.remove('hidden');
+    diceEl.src = `/img /dice-${dice}.png`
+
+    // Check for rolled 
+
+    if(dice !== 1) {
+        // Add dice to current score 
+        currentScore += dice;
+        document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+
+    } else {
+        // Switch player
+        switchPlayer();
+    }
+}
+}, false);
+
+btnHold.addEventListener('touchend',  function(e) {
+
+    e.preventDefault();
+    e.target.click();
+
+
+    if(playing){
+   
+    // Add current score to activate player
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+
+
+    // Check for player score is 100 
+    if (scores[activePlayer] >= 40){
+        // Display the winner
+        playing = false;
+         diceEl.classList.add('hidden');
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+          document.querySelector(`.player--${activePlayer}`).classList.remove('player--activate');
+          animation.classList.remove('hidden');
+          // End the Game 
+    } else {
+        // Switch to the next player
+        switchPlayer();
+    }
+
+    }
+}, false);
+
+// Reset the Game
+btnNew.addEventListener('touchend', init, false );
+
+
+
+
+
+
+
+
+
+
+
 // Rolling dice logic functionality 
 
 btnRoll.addEventListener('click', function() {
@@ -83,7 +161,7 @@ btnRoll.addEventListener('click', function() {
         switchPlayer();
     }
 }
-});
+}, false);
 
 btnHold.addEventListener('click',  function() {
 
@@ -110,72 +188,7 @@ btnHold.addEventListener('click',  function() {
     }
 
     }
-});
+},false );
 
 // Reset the Game
-btnNew.addEventListener('click', init);
-
-
-
-
-// --------- Event Listener For Touch Device ----------------- //
-
-
-// Rolling dice logic functionality 
-
-btnRoll.addEventListener('touchend', function() {
-
-
-
-    if (playing){
-
-    // Generate random dice number
-
-    const dice = Math.trunc ( Math.random() * 6 ) + 1 ;
-    // Display dice number 
-    diceEl.classList.remove('hidden');
-    diceEl.src = `/img /dice-${dice}.png`
-
-    // Check for rolled 
-
-    if(dice !== 1) {
-        // Add dice to current score 
-        currentScore += dice;
-        document.getElementById(`current--${activePlayer}`).textContent = currentScore;
-
-    } else {
-        // Switch player
-        switchPlayer();
-    }
-}
-});
-
-btnHold.addEventListener('touchend',  function() {
-
-
-    if(playing){
-   
-    // Add current score to activate player
-    scores[activePlayer] += currentScore;
-    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
-
-
-    // Check for player score is 100 
-    if (scores[activePlayer] >= 40){
-        // Display the winner
-        playing = false;
-         diceEl.classList.add('hidden');
-        document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
-          document.querySelector(`.player--${activePlayer}`).classList.remove('player--activate');
-          animation.classList.remove('hidden');
-          // End the Game 
-    } else {
-        // Switch to the next player
-        switchPlayer();
-    }
-
-    }
-});
-
-// Reset the Game
-btnNew.addEventListener('touchend', init);
+btnNew.addEventListener('click', init, false);
