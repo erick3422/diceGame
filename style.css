@@ -304,7 +304,7 @@ main {
 
     body {
         color: #333;
-        background-image: linear-gradient( #ffffff  , #0f85add2 );
+        background-image: linear-gradient( #ffffff  50%, #0f85add2 50%);
         display: flex;
     }
     main{ 
