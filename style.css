@@ -303,7 +303,11 @@ main {
 
 
     body {
-        background-image: none;
+        color: #333;
+        background-image: linear-gradient(to top left,  #ffffff 0%, #0f85add2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     main{ 
   position: absolute;
