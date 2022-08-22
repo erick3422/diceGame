@@ -395,6 +395,11 @@ main {
     left:990px;
 }
 
+
+.dice {
+    position:absolute;
+    left: 740px;
+}
 .btn {
     font-size: 30px;
     align-content: center;
