@@ -402,6 +402,8 @@ main {
     font-family: inherit;
     color: #444;
     border: none;
+    position: absolute;
+    left: 780px;
 
 
     background-color: white;
