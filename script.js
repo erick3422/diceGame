@@ -123,7 +123,7 @@ btnNew.addEventListener('click', init);
 
 // Rolling dice logic functionality 
 
-btnRoll.addEventListener('touchstart', function() {
+btnRoll.addEventListener('touchend', function() {
 
 
 
@@ -150,7 +150,7 @@ btnRoll.addEventListener('touchstart', function() {
 }
 });
 
-btnHold.addEventListener('touchstart',  function() {
+btnHold.addEventListener('touchend',  function() {
 
 
     if(playing){
@@ -178,4 +178,4 @@ btnHold.addEventListener('touchstart',  function() {
 });
 
 // Reset the Game
-btnNew.addEventListener('touchstart', init);
+btnNew.addEventListener('touchend', init);
