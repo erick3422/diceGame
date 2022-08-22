@@ -304,7 +304,7 @@ main {
 
     body {
         color: #333;
-        background-image: linear-gradient( #ffffff  0%, #0f85add2 100%);
+        background-image: linear-gradient( #ffffff  , #0f85add2 );
         display: flex;
         align-items: center;
         justify-content: center;
