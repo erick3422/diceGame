@@ -23,8 +23,8 @@ Dice Game is another game that can be play by two players, game is simple each p
 
 
 ## Live Page 
- Goes Here 
-
+ 
+https://glowing-speculoos-10bb2a.netlify.app
 
 
  ## Technologies Used
